@@ -1,2 +1,1 @@
-# system-alerts
-Framework to send email alerts with Python
+Use this repo to quickly inigrate email alerts into your applications using Python. Simply provide a recipient, subject, body. 

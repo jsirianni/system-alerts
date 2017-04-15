@@ -10,4 +10,4 @@ recipient = input("recipient: ")
 subject = input("subject: ")
 body = input("message: ")
 
-email_gen(recipient, subject, body)
+email_gen(recipient,subject,body)

@@ -8,6 +8,6 @@ import email_gen
 
 recipient = input("recipient: ")
 subject = input("subject: ")
-body = input("subject: ")
+body = input("message: ")
 
 email_gen(recipient, subject, body)

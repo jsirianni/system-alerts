@@ -31,6 +31,6 @@ Pass a recipient email address, subject, message to send (text)
         server.sendmail(gmail_sender, [TO], BODY)
         print ('email sent')
     except:
-    print ('error sending mail')
+        print ('error sending mail')
 
     server.quit()

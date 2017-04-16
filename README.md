@@ -1,1 +1,13 @@
-Use this repo to quickly inigrate email alerts into your applications using Python. Simply provide a recipient, subject, body. 
+#### Description
+This repo provides a framework to quickly integrate SMTP email alerts into your program using Python 3. 
+
+#### How it works
+emailgen.py has a function called 'sendAlert'
+  - The sendAlert funtion shoudl be passed three strings in this order
+    - recipient email address
+    - subject
+    - message (output from a command run from cron for example)
+
+Currently emailgen.py has email addresses and passwords hardcoded. This will be fixed in a later release. 
+
+To test this program, run test.py.

@@ -13,8 +13,8 @@ def sendAlert(recipient, subject, text):
     TEXT = text
 
     #Gmail Sign In
-    gmail_sender = 'alerts.sirianni@gmail.com'
-    gmail_passwd = 'jumper21'
+    gmail_sender = 'email_here'
+    gmail_passwd = 'password_here'
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()

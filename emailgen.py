@@ -3,19 +3,18 @@ import smtplib
 
 
 def sendAlert(recipient, subject, text):
-'''
-Call this function to send an alert via gmail
-Sending email account and password is predefined
-Pass a recipient email address, subject, message to send (text)
-'''
-
-    TO = 'recipient@mailservice.com'
-    SUBJECT = 'TEST MAIL'
-    TEXT = 'Here is a message from python.'
+    '''
+    Call this function to send an alert via gmail
+    Sending email account and password is predefined
+    Pass a recipient email address, subject, message to send (text)
+    '''
+    TO = recipient
+    SUBJECT = subject
+    TEXT = text
 
     #Gmail Sign In
-    gmail_sender = 'sender@gmail.com'
-    gmail_passwd = 'password'
+    gmail_sender = 'alerts.sirianni@gmail.com'
+    gmail_passwd = 'jumper21'
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
@@ -29,8 +28,8 @@ Pass a recipient email address, subject, message to send (text)
 
     try:
         server.sendmail(gmail_sender, [TO], BODY)
-        print ('email sent')
+        print('email sent')
     except:
-    print ('error sending mail')
+        print('error sending mail')
 
     server.quit()

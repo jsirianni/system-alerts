@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-import email_gen
+import emailgen
 
 #
 # Test script for sending emails
@@ -10,4 +10,4 @@ recipient = input("recipient: ")
 subject = input("subject: ")
 body = input("message: ")
 
-email_gen(recipient,subject,body)
+emailgen.sendAlert(recipient, subject, body)

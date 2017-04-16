@@ -2,7 +2,7 @@
 import smtplib
 
 
-def sendAlert(recipient, subject, text):
+def sendAlert(recipient, subject, text, sender, password):
     '''
     Call this function to send an alert via gmail
     Sending email account and password is predefined
@@ -13,8 +13,8 @@ def sendAlert(recipient, subject, text):
     TEXT = text
 
     #Gmail Sign In
-    gmail_sender = 'email_here'
-    gmail_passwd = 'password_here'
+    gmail_sender = sender
+    gmail_passwd = password
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()

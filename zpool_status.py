@@ -10,7 +10,7 @@ import emailgen
 recipient = input("recipient: ")
 sender = input("sender: ")
 password = input("sender password: ")
-subject = "TeamIT Alerts: ZPOOL Status " + os.uname().nodename
+subject = "zpool alert"
 
 #
 # Get zpool status, format for email

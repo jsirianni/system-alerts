@@ -10,7 +10,7 @@ import emailgen
 recipient = input("recipient: ")
 sender = input("sender: ")
 password = input("sender password: ")
-subject = "TeamIT Alert HDD Temp: " + os.uname().nodename
+subject = "hdd temp alert"
 
 #
 # Get hdd temp, format for email

@@ -2,18 +2,23 @@
 import os
 import subprocess
 import emailgen
-import subprocess
+
 
 #
-# Test script for sending emails
+# Header information
 #
 recipient = input("recipient: ")
-subject = input("subject: ")
 sender = input("sender: ")
 password = input("sender password: ")
+subject = input("subject: ")
 
+#
+# Get zpool status, format for email
+#
+output = subprocess.check_output('sudo zpool status', shell=True)
+text = output.decode('ascii')
 
-body = subprocess.check_output('sudo zpool status', shell=True)
-text = str(body)
-
+#
+# Call sendAlert function
+#
 emailgen.sendAlert(recipient, subject, text, sender, password)

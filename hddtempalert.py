@@ -10,13 +10,19 @@ import emailgen
 recipient = input("recipient: ")
 sender = input("sender: ")
 password = input("sender password: ")
-subject = "TeamIT Alerts: ZPOOL Status " + os.uname().nodename
+subject = "TeamIT Alert HDD Temp: " + os.uname().nodename
 
 #
-# Get zpool status, format for email
+# Get hdd temp, format for email
 #
-output = subprocess.check_output('sudo zpool status', shell=True)
-text = output.decode('ascii')
+output = subprocess.check_output('sudo hddtemp /dev/sda /dev/sdb /dev/sdc', shell=True)
+text = output.decode('utf-8')
+
+#
+# Email requires ascii
+#
+text = text.encode('ascii','ignore')
+text = text.decode('ascii')
 
 #
 # Add descriptive information to text

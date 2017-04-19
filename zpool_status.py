@@ -3,7 +3,6 @@ import os
 import subprocess
 import emailgen
 import subprocess
-from email.mime.text import MIMEText
 
 #
 # Test script for sending emails
@@ -14,8 +13,7 @@ sender = input("sender: ")
 password = input("sender password: ")
 
 
-output = subprocess.check_output('sudo zpool status', shell=True)
-body = MIMEText(output)
+body = subprocess.check_output('sudo zpool status', shell=True)
 text = str(body)
 
 emailgen.sendAlert(recipient, subject, text, sender, password)

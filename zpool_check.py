@@ -22,7 +22,7 @@ if " DEGRADED" in status:
     recipient = ""
     sender = ""
     password = ""
-    subject = "TeamIT Alerts: ZPOOL DEGRADED " + os.uname().nodename
+    subject = "subject here " + os.uname().nodename
 
     # Get zpool status, format for email
     output = subprocess.check_output('sudo zpool status', shell=True)

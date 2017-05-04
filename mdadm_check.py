@@ -5,12 +5,14 @@ import emailgen
 #
 # Check MDADM STATUS, run via cron
 #
-
+# FIND AND REPLACE both "md*" with the name of your array. IE. "md0"
+#
+#
 
 #
 # Get MDADM status
 #
-status = subprocess.check_output("sudo mdadm --detail /dev/md129 | grep 'State :'", shell=True)
+status = subprocess.check_output("sudo mdadm --detail /dev/md* | grep 'State :'", shell=True)
 status = status.decode('ascii')
 
 

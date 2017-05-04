@@ -3,29 +3,29 @@ import os
 import subprocess
 import emailgen
 #
-# Check ZPOOL STATUS, run via cron
+# Check MDADM STATUS, run via cron
 #
 
 
 #
-# Get zpool status
+# Get MDADM status
 #
-status = subprocess.check_output('sudo zpool status | grep state', shell=True)
+status = subprocess.check_output("sudo mdadm --detail /dev/md129 | grep 'State :'", shell=True)
 status = status.decode('ascii')
 
 
 #
 # Parse string, if DEGRADED then call email script
 #
-if " DEGRADED" in status:
+if " degr" in status:
     # Header information
     recipient = ""
     sender = ""
     password = ""
-    subject = "subject here " + os.uname().nodename
+    subject = "MDADM is DEGRADED: " + os.uname().nodename
 
-    # Get zpool status, format for email
-    output = subprocess.check_output('sudo zpool status', shell=True)
+    # Get MDADM status, format for email
+    output = subprocess.check_output('sudo mdadm --detail /dev/md*', shell=True)
     text = output.decode('ascii')
 
     # Add descriptive information to text
@@ -36,4 +36,4 @@ if " DEGRADED" in status:
 
 
 else:
-    print("ZPOOL IS HEALTHY")
+    print("MDADM IS HEALTHY")
